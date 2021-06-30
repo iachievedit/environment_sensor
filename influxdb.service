@@ -1,0 +1,12 @@
+[Unit]
+Description   = InfluxDB 2.0
+After         = network-online.target
+
+[Service]
+User          = influxdb
+Group         = influxdb
+ExecStart     = /opt/influxdb/bin/influxd 
+Restart       = on-failure
+
+[Install]
+WantedBy      = multi-user.target

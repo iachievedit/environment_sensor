@@ -1,0 +1,14 @@
+[Unit]
+Description = Environment Sensor
+After       = network-online.target
+
+[Service]
+User        = root
+Group       = root
+Type        = simple
+ExecStart   = /usr/local/bin/environment_sensor.py
+Restart     = always
+RestartSec  = 3
+
+[Install]
+WantedBy    = multi-user.target
